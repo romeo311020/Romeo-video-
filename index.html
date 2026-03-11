@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROMEO LIVE TV</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+color:white;
+text-align:center;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+/* الخلفية المتحركة */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(45deg,#0a1cff,#001a66,#0044ff,#001133);
+background-size:400% 400%;
+animation:bgmove 10s infinite alternate;
+z-index:-1;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+padding:15px;
+font-size:22px;
+font-weight:bold;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(5px);
+}
+
+.container{
+width:90%;
+max-width:900px;
+margin:auto;
+margin-top:40px;
+}
+
+.player{
+background:rgba(0,0,0,0.6);
+padding:10px;
+border-radius:12px;
+box-shadow:0 0 20px rgba(0,0,0,0.7);
+}
+
+video{
+width:100%;
+border-radius:10px;
+}
+
+.title{
+font-size:22px;
+margin-top:20px;
+}
+
+.buttons{
+margin-top:20px;
+}
+
+button{
+background:#0066ff;
+border:none;
+padding:10px 20px;
+margin:5px;
+color:white;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#3385ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+ROMEO LIVE TV
+</header>
+
+<div class="container">
+
+<div class="player">
+
+<video controls>
+<source src="video.mp4" type="video/mp4">
+</video>
+
+</div>
+
+<div class="title">
+مشاهدة الفيديو
+</div>
+
+<div class="buttons">
+
+<button onclick="downloadVideo()">تحميل الفيديو</button>
+
+<button onclick="alert('سيتم إضافة سيرفرات قريباً')">سيرفر آخر</button>
+
+</div>
+
+</div>
+
+<script>
+
+function downloadVideo(){
+window.open("video.mp4");
+}
+
+</script>
+
+</body>
+</html>
